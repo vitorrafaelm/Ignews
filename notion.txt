@@ -1,0 +1,30 @@
+## Next .env: No next podemos ter vários .env a depender do ambiente em que a nossa aplicação
+está: 
+    .env.local: ambiente de desenvolvimento
+    .env.development: ambiente de desenvolvimento
+    .env.production: ambiente de produção
+
+## Chamadas a API a nível de componente ocasiona que a chamada só vai ser realizada no momento que 
+o componente é montado no browser. Acaba gerando um mudanças perceptiveis para o usuário; 
+
+## Vamos usar server side rendering para fazer chamadas a API; Quando o next devolver as páginas já 
+com as informações que precisamos; 
+
+## Essas chamadas devem ser realizadas em páginas e não em componentes; 
+
+
+## Static Site Generation: geração de sites estáticos
+    - A pessoa acessa a aplicação e o next.js cria um arquivo estático com o resultado final, 
+    Logo retorna o html direto para o browser. 
+    - Para isso, basta trocar o getServerSideProps pelo getStaticProps
+
+- O serverSideProps ajuda a deixar as coisas mais dinâmicas; 
+- o getStaticProps só deve ser usado para páginas que podem ser estáticas, 
+e que é o mesmo para todas as pessoas que acessarem as aplicações; 
+- O serverSideProps você pode pegar informações dinâmicas; 
+
+
+# Formas de fazer uma chamada a api com next: 
+    - Client-side
+    - Server-side
+    - Static Site Generation
