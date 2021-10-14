@@ -21,10 +21,56 @@ com as informações que precisamos;
 - O serverSideProps ajuda a deixar as coisas mais dinâmicas; 
 - o getStaticProps só deve ser usado para páginas que podem ser estáticas, 
 e que é o mesmo para todas as pessoas que acessarem as aplicações; 
-- O serverSideProps você pode pegar informações dinâmicas; 
+- O serverSideProps você pode pegar informações dinâmicas e o efeito que causa é
+a página pode demorar para carregar até pegar as informações de uma API.  
 
 
 # Formas de fazer uma chamada a api com next: 
     - Client-side
     - Server-side
     - Static Site Generation
+
+# Vamos desenvolver a parte de autenticação e de acesso ao Stripe; 
+    - Vamos usar API routes do Next. 
+    - File System Router - As páginas do next.js viram rotas da aplicação; 
+    - A parte de Login e Pagamentos agora podem ser feitas do lado do front-end; 
+    Por causa do Next API;
+    - As informações que estão no frontend sempre são públicas e qual quer usuário
+    poderia ver; 
+    - Dentro da pasta pages foi criado uma pasta com nome API e todos os arquivos
+    dentro dessa pasta se torna rotas no backend; As rotas são puramente backend; 
+    - As rotas da API routes rodam no momento que o usuário não tem acesso e podem
+    ser acessadas pelos métodos getStaticProps, getServerSideProps; 
+    - Toda vez que a rota é chamada, sobre um ambiente isolado para atender a chamada
+    a API; 
+
+# Estratégias de autenticação; 
+    - Para a grande maiorias das aplicações o método mais simples de autenticação 
+    é o JWT com refresh token; 
+    - 1º estratégia: o JWT ser salvo no storage; 
+    - 2º Next Auth (Quando o sistema de autenticação é simples, Login Social e 
+    quando não queremos ficar se preocupando em armazenar informações do usuário 
+    no backend); 
+    - ##### Ler o guia de autenticação do Next;
+    - Cognito, Auth0 são formas de autenticação; 
+    - Vamos usar o Next Auth; 
+
+# Parametrização de Rotas; 
+    - users/id
+    - [...params] -> Mostra todos os parametros; 
+    - API/{arquivos rotas}; 
+
+# autenticação com Next-auth; 
+    - yarn add next-auth;
+    - Seguir tutorial da documentação; 
+
+# Escolhendo um banco de dados
+    - Esse front-ent não depende de nenhum backend; 
+    - Assim que o usuário logar na aplicação precisamos salvar algumas informações
+    dentro de um banco de dados; 
+    - Vamos usar o fauna DB que é específico para aplicações serveless; 
+    - Todas as operações que são feitas dentro do fauna db são feitas por http; 
+    - Geralmente os bancos de dados possuem limites de conexão; 
+    - O Fauna DB não precisa de conexão aberta para usarmos; 
+    - O frontend está ganhando mais responsabilidades; 
+    
