@@ -73,4 +73,38 @@ a página pode demorar para carregar até pegar as informações de uma API.
     - Geralmente os bancos de dados possuem limites de conexão; 
     - O Fauna DB não precisa de conexão aberta para usarmos; 
     - O frontend está ganhando mais responsabilidades; 
+
+# Configurando o Fauna
+    - Para configurar o FaunaDB basta criar uma conta no fauna, criar um novo 
+    banco de dados e gerar uma key de acesso aos dados do banco; 
+    - O Fauna usa collections; 
+    - O Fauna é um schema free, não possui colunas free. É salvo arquivos; 
+    - Criar uma collection de users (ou qualquer coisa que queira); 
+    - Criar um index (ajuda a aplicação a ser mais performática);
+    - Para trabalhar com o FAUNA, temos que instalar a SDK do app; yarn add faunadb; 
+    - getStaticProps e getServerSideProps, as operações no stripe ou no banco de
+    dados não podem ser feitas pelo lado do browser, somente dentro da pasta API
+    ou por dentro dos métodos getServerSideProps e getStaticProps, pois essas funções
+    só executam no backend da nossa aplicação; 
+
+# Salvando Usuário no banco
+    - Callback são funções que são executadas dentro do next-auth sempre que uma 
+    função é executada; 
+    - No fauna só da para buscar informações se criar indexes; 
+
+# Gerando Sessão de checkout no Stripe; 
+    - checkout session é uma tela que o usuário vai preencher as informações de 
+    pagamento e quando o usuário finalizar ele vai ser redirecionado de volta 
+    para a aplicação; 
+    - Operações que precisam de segurança devem ser feitas dentro do getServerSideProps
+    , dentro do getStaticProps e nas API routes; 
+    - Refazer o login do google usando API routes; No Teleport; 
+    O stripe possui um sdk para backend e um para frontend; 
+
+# Webhooks 
+    - São parteners para integração com serviços de terceiros; 
+    - Uma aplicação terceira avisa a nossa aplicação que alguma coisa aconteceu; 
+    - Geralmente esse aviso ocorre através de uma rota; Com essas informações
+    conseguimos tomar alguma ação; 
+    - O Stripe envia Webhooks em formatos de streams que são enviados aos poucos;
     
