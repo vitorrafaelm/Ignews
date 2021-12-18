@@ -107,4 +107,19 @@ a página pode demorar para carregar até pegar as informações de uma API.
     - Geralmente esse aviso ocorre através de uma rota; Com essas informações
     conseguimos tomar alguma ação; 
     - O Stripe envia Webhooks em formatos de streams que são enviados aos poucos;
-    
+
+# JAMStack 
+  - Java Script, API, Markup. 
+  - Fauna, Strip -> CMS; São aplicações que servem dados que não dependem de um frontend; 
+  - CMS (Content Management System) - Dá paineis de administração para adicionar conteúdos; 
+    - Wordpress, Drupal, Joomla, Magento; 
+  - Headless CMS - Um CMS que não possui a parte visual para quem vai consumir um conteúdo; 
+  Possui painel de administração e os dados são servidos através de uma API HTTP, GraphQL; 
+    - Strapi, Ghost, Keystone, GraphCMS, Prismic CMS, contentFul, Shopify, Saleor;
+    - Ghost serve para fazer blogs; 
+    - Strapi serve para qualquer tipo de conteúdo que eu queira armazenar (HTTP, GraphQL); 
+    Strapi é melhor para projetos pequenos, para projetos grandes dá alguns bugs; 
+  - Vamos usar o Prismic durante o projeto; 
+
+## Consumindo api prismic 
+  - yarn add @prismicio/client -> instala o client do prismic
